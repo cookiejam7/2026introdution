@@ -1,4 +1,5 @@
 import stadium from "../assets/stadium.jpg";
+import stadium2 from "../assets/stadium2.png";
 import shin1 from "../assets/shin001.jpg";
 import shin2 from "../assets/shin002.jpg";
 import shin3 from "../assets/shin003.png";
@@ -14,7 +15,7 @@ function Home() {
 
   const theme = useThemeStore((state) => state.theme);
 
-  const cardStyle = `rounded-xl p-6 shadow transition-colors duration-300 ${
+  const cardStyle = `rounded-xl p-6 shadow transition-colors duration-0 ${
     theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-gray-900"
   }`;
 
@@ -76,14 +77,16 @@ function Home() {
 
   return (
     <div
-      className={`min-h-screen bg-cover bg-center transition-all duration-300 ${
+      className={`min-h-screen bg-cover bg-center transition-all duration-0 ${
         visible ? "opacity-100" : "opacity-0"
       } ${
         theme === "dark"
           ? "bg-gray-950 text-white"
           : "bg-gray-100 text-gray-900"
       }`}
-      style={{ backgroundImage: `url(${stadium})` }}
+      style={{
+        backgroundImage: `url(${theme === "dark" ? stadium2 : stadium})`,
+      }}
     >
       <main className="mx-auto max-w-5xl space-y-6 px-6 py-10">
         <div className="flex justify-end">
